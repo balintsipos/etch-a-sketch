@@ -1,1 +1,1 @@
-A simple browser-based Etch-a-sketch game made using HTML, CSS and Javascript
+A simple browser-based Etch-a-sketch game made using HTML, CSS and Javascript. Part of the Odin Project.
