@@ -3,6 +3,7 @@ let cellCount = 64*64;
 let isDrawing = false;
 
 drawingBoard.addEventListener('mousedown', function(event) {
+    event.preventDefault();
     isDrawing = true;
 })
 
@@ -15,7 +16,6 @@ function fillGrid(count) {
         const div = document.createElement('div');
         div.classList.add('cell');
         div.addEventListener('mouseover', (event) => {
-            event.preventDefault();
             if (isDrawing === true) {
                 event.target.style.backgroundColor = 'black';
             }
