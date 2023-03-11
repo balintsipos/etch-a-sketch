@@ -3,3 +3,39 @@ h1 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 100;
 }
+
+.grid-col-span-2 {
+    grid-column: span 2;
+}
+
+.container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 30% 70%;
+}
+
+.options {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    padding-left: 40%;
+    padding-right: 40%;
+}
+
+.drawing-board {
+    border-width: 2px;
+    border-color: black;
+    border-style: dotted;
+    display: grid;
+    grid-template-columns: repeat(64, 2fr);
+    grid-template-rows: repeat(64, 2fr);
+    width: 600px;
+    height: 600px;
+}
+
+.cell {
+    background-color: white;
+    border: 1px solid grey;
+}
