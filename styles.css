@@ -9,25 +9,32 @@ h1 {
 }
 
 .container {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: 30% 70%;
+    display: flex;
+    justify-content: center;
 }
 
 .options {
-    text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 100px;
+    padding-top: 100px;
     gap: 25px;
-    justify-content: center;
-    padding-left: 40%;
-    padding-right: 40%;
+    margin-right: 50px;
+}
+
+.button {
+    width: 100px;
+    height: 50px;
 }
 
 .drawing-board {
     border-width: 2px;
     border-color: black;
-    border-style: dotted;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 5px;
+    padding: 0px;
     display: grid;
     grid-template-columns: repeat(64, 2fr);
     grid-template-rows: repeat(64, 2fr);

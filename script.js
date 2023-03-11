@@ -1,5 +1,5 @@
 const drawingBoard = document.querySelector(".drawing-board");
-let cellCount = 64*64;
+let cellCount = 64*64; // default value
 let isDrawing = false;
 
 drawingBoard.addEventListener('mousedown', function(event) {
@@ -19,9 +19,22 @@ function fillGrid(count) {
             if (isDrawing === true) {
                 event.target.style.backgroundColor = 'black';
             }
-        })
+        });
         drawingBoard.appendChild(div);
     }
 }
 
+function clearGrid() {
+    const divs = document.querySelectorAll('.cell');
+    divs.forEach(element => {
+        element.style.backgroundColor = 'white';
+    });
+}
+
+function addClearFunctionality() {
+    const clearBtn = document.querySelector('.clearBtn');
+    clearBtn.addEventListener('click', clearGrid);
+}
+
 fillGrid();
+addClearFunctionality();
