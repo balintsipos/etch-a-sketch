@@ -22,7 +22,7 @@ function fillGrid() {
     for (let i = 0; i < cellCount*cellCount; i++) {
         const div = document.createElement('div');
         div.classList.add('cell');
-        div.addEventListener('mouseover', (event) => {
+        div.addEventListener('mousemove', (event) => {
             if (isDrawing === true) {
                 if (isRainbow) {
                     event.target.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
@@ -31,7 +31,7 @@ function fillGrid() {
                 }
             }
         });
-        div.addEventListener('mousemove', (event) => {
+        div.addEventListener('mouseup', (event) => {
             if (isDrawing === true) {
                 if (isRainbow) {
                     event.target.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
