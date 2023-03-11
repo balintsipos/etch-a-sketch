@@ -35,6 +35,18 @@ h1 {
     padding: 10px;
     font-size: 24px;
     font-family: 'Press Start 2P';
+    background-color: white;
+    color: black;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
+}
+
+#colorBtn:hover{
+    background-color: black;
+    color: white;
 }
 
 #slider {
@@ -68,6 +80,7 @@ h1 {
     background-color: white;
     border: 1px solid black;
 }
+
 
 .footer {
     text-align: right;

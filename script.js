@@ -3,6 +3,7 @@ const slider = document.querySelector('#slider')
 const sliderInfo = document.querySelector('.sliderInfo')
 let cellCount = 32; //default value
 let isDrawing = false;
+isRainbow = false;
 
 drawingBoard.addEventListener('mousedown', function(event) {
     event.preventDefault();
@@ -23,7 +24,11 @@ function fillGrid() {
         div.classList.add('cell');
         div.addEventListener('mouseover', (event) => {
             if (isDrawing === true) {
-                event.target.style.backgroundColor = document.getElementById("colorBtn").value;
+                if (isRainbow) {
+                    event.target.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                } else {
+                    event.target.style.backgroundColor = document.getElementById("colorBtn").value;
+                }
             }
         });
         drawingBoard.appendChild(div);
@@ -42,6 +47,21 @@ function addClearFunctionality() {
     clearBtn.addEventListener('click', clearGrid);
 }
 
+function addRainbowFunctionality() {
+    const rainbowBtn = document.querySelector('.rainbowBtn');
+    rainbowBtn.addEventListener('click', () => {
+        if (isRainbow) {
+            isRainbow = false;
+            rainbowBtn.style.backgroundColor = 'white';
+            rainbowBtn.style.color = "black";
+        } else {
+            isRainbow = true;
+            rainbowBtn.style.backgroundColor = 'black';
+            rainbowBtn.style.color = "white";
+        }
+    });
+}
+
 function addSliderFunctionality() {
     slider.addEventListener('input', (event) => {
         cellCount = slider.value;
@@ -55,6 +75,7 @@ function main () {
     fillGrid();
     addClearFunctionality();
     addSliderFunctionality();
+    addRainbowFunctionality();
 }
 
 main();
