@@ -1,5 +1,6 @@
 const drawingBoard = document.querySelector(".drawing-board");
-let cellCount = 64*64; // default value
+const slider = document.querySelector('#slider')
+let cellCount = 32; //default value
 let isDrawing = false;
 
 drawingBoard.addEventListener('mousedown', function(event) {
@@ -11,8 +12,12 @@ drawingBoard.addEventListener('mouseup', function(event) {
     isDrawing = false;
 })
 
-function fillGrid(count) {
-    for (let i = 0; i < cellCount; i++) {
+function fillGrid() {
+    while(drawingBoard.firstChild){
+        drawingBoard.removeChild(drawingBoard.firstChild);
+    }
+    drawingBoard.setAttribute('style', `grid-template-columns: repeat(${cellCount}, 2fr); grid-template-rows: repeat(${cellCount}, 2fr);`);
+    for (let i = 0; i < cellCount*cellCount; i++) {
         const div = document.createElement('div');
         div.classList.add('cell');
         div.addEventListener('mouseover', (event) => {
@@ -36,13 +41,18 @@ function addClearFunctionality() {
     clearBtn.addEventListener('click', clearGrid);
 }
 
-function addColorFunctionality() {
-
+function addSliderFunctionality() {
+    slider.addEventListener('input', (event) => {
+        cellCount = slider.value;
+        clearGrid();
+        fillGrid();
+    });
 }
 
 function main () {
     fillGrid();
     addClearFunctionality();
+    addSliderFunctionality();
 }
 
 main();
