@@ -31,6 +31,16 @@ function fillGrid() {
                 }
             }
         });
+        div.addEventListener('mousemove', (event) => {
+            if (isDrawing === true) {
+                if (isRainbow) {
+                    event.target.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                } else {
+                    event.target.style.backgroundColor = document.getElementById("colorBtn").value;
+                }
+            }
+        });
+
         drawingBoard.appendChild(div);
     }
 }
