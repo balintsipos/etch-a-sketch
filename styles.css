@@ -14,9 +14,11 @@ h1 {
 }
 
 .options {
+    width: 240px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     gap: 50px;
     margin-right: 75px;
     padding-bottom: 10px;
@@ -36,12 +38,16 @@ h1 {
 }
 
 #slider {
-    width: 200px;
+    width: 180px;
+    cursor: pointer;
+    border: 5px solid black;
+    height: 20px;
 }
 
 .sliderInfo {
     text-align: center;
     font-size: 30px;
+    font-family: 'Press Start 2P';
 }
 
 .drawing-board {
