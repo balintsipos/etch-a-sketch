@@ -17,7 +17,7 @@ function fillGrid(count) {
         div.classList.add('cell');
         div.addEventListener('mouseover', (event) => {
             if (isDrawing === true) {
-                event.target.style.backgroundColor = 'black';
+                event.target.style.backgroundColor = document.getElementById("colorBtn").value;
             }
         });
         drawingBoard.appendChild(div);
@@ -36,5 +36,13 @@ function addClearFunctionality() {
     clearBtn.addEventListener('click', clearGrid);
 }
 
-fillGrid();
-addClearFunctionality();
+function addColorFunctionality() {
+
+}
+
+function main () {
+    fillGrid();
+    addClearFunctionality();
+}
+
+main();
