@@ -15,8 +15,8 @@ drawingBoard.addEventListener('mouseup', function(event) {
 })
 
 function fillGrid() {
-    while(drawingBoard.firstChild){
-        drawingBoard.removeChild(drawingBoard.lasttChild);
+    while(drawingBoard.lastChild){
+        drawingBoard.removeChild(drawingBoard.lastChild);
     }
     drawingBoard.setAttribute('style', `grid-template-columns: repeat(${cellCount}, 2fr); grid-template-rows: repeat(${cellCount}, 2fr);`);
     for (let i = 0; i < cellCount*cellCount; i++) {
